@@ -4,6 +4,7 @@ namespace Artisaninweb\SoapWrapper;
 
 use Exception;
 use Closure;
+use SoapVar;
 
 /**
  * Soap Webservice wrapper
