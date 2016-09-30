@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "antonio8101\\laravel-soap\\SoapWrapper\\": "src/"
+            "antonio8101\\LaravelSoap\\SoapWrapper\\": "src/"
         }
     }
 }
