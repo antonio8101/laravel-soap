@@ -369,6 +369,7 @@ class Service
        set_error_handler('var_dump',0);
        @trigger_error("");
        restore_error_handler();
+       throw new \Exception('SoapClient creation failed');
       
     }
     
