@@ -170,7 +170,8 @@ class Service
   {
     $options = [
       'trace'      => $this->getTrace(),
-      'cache_wsdl' => $this->getCache()
+      'cache_wsdl' => $this->getCache(),
+      'exception'  => true,
     ];
 
     if ($this->certificate) {
@@ -358,8 +359,19 @@ class Service
    */
   public function createClient()
   {
-    $this->client = new SoapClient($this->getWsdl(), $this->getOptions());
-
+    
+    try {
+      
+       $this->client = new SoapClient($this->getWsdl(), $this->getOptions());
+      
+    }  catch (\Exception $e) {
+       
+       set_error_handler('var_dump',0);
+       @trigger_error("");
+       restore_error_handler();
+      
+    }
+    
     return $this;
   }
 
